@@ -41,14 +41,17 @@ class Usuario {
     public function login () {
         $email = $_POST['email'];
         $password = md5($_POST['password']);
-        $query = 'SELECT * FROM users WHERE email=:email AND password=:pasword';
-        $this->cnx->prepare($query);
-        $this->cnx->bindParam(':email', $email);
-        $this->cnx->bindParam(':password', $password);
-        $result =$this->cnx->execute();
-        if($result) {
-            $result = $result->fetchAll(PDO::FETCH_ASSOC);
-            $this->response = $result;
+        $query = 'SELECT * FROM users WHERE email=? AND password=?';
+        $statement = $this->cnx->prepare($query);
+        if($statement->execute(array($email, $password))) {
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if(isset($result[0])) {
+                $this->response = array(
+                    'status' => 200,
+                    'message' => 'Bienvenido',
+                    'userData' => $result[0]
+                );
+            } else $this->displayError('Error de credenciales');
         }
     }
     private function displayError($message) {
