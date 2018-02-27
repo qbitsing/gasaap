@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(.*)$ index.php?PATH_INFO=$1 [L,QSA]
