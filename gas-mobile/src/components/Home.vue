@@ -1,6 +1,8 @@
 <template>
     <StackLayout>
         <Label :text="hometext"/>
+        <Label text="hometext"/>
+        <button @tap="$router.replace('/register')">Ir a pantalla de registro</button>    
     </StackLayout>
 </template>
 
@@ -8,15 +10,8 @@
   export default {
       data() {
           return {
-              hometext: 'Esta es la home'
+              hometext: 'Esta es llllllllldfdfdflll'
           }
       }
   };
 </script>
-
-<style scoped>
-    Button {
-        background-color: #42b883;
-        width: 50%;
-    }
-</style>
