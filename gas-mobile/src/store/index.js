@@ -1,7 +1,5 @@
 import Vue from 'nativescript-vue'
 import Vuex from 'vuex'
-import VueRouter from 'vue-router'
-
 import counter from './modules/counter'
 
 Vue.use(Vuex)

@@ -12,9 +12,9 @@
     data () {
       return {
         surprise: false,
-      };
+      }
     },
-  };
+  }
 </script>
 
 <style scoped>
