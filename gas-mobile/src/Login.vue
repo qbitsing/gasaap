@@ -1,16 +1,12 @@
 <template>
     <Page>
-        <ActionBar title="NativeScript-Vue 🎉" />
-
         <StackLayout>
             <Label :text="msg" />
-            <Counter />
         </StackLayout>
     </Page>
 </template>
 
 <script>
-  import Counter from './components/Counter';
 
   export default {
     data() {
@@ -18,9 +14,9 @@
         msg: 'Welcome to NativeScript-Vue.',
       }
     },
-    components: {
-      Counter
-    }
+    // components: {
+    //   Counter
+    // }
   }
 </script>
 
