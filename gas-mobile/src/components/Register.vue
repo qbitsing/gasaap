@@ -1,7 +1,8 @@
 <template>
   <StackLayout>
         <Label :text="labelText"/>
-        <image src="~/assets/images/hola.png" />
+        <image src="~/images/hola.png"></image>
+
         <button @tap="$router.replace('/home')">Home</button>    
     </StackLayout>
 </template>
