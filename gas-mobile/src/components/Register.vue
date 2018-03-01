@@ -2,7 +2,8 @@
   <StackLayout>
         <Label :text="labelText"/>
         <image src="~/assets/images/hola.png" />
-        <button @tap="$router.replace('/home')">Home</button>    
+        <button @tap="$router.replace('/home')">Cancelar</button>  
+        <button @tap="$router.replace('/init')">Registrarse</button>  
     </StackLayout>
 </template>
 <script>
