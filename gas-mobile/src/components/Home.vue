@@ -1,22 +1,37 @@
 <template>
-    <StackLayout>
-        <Label :text="hometext"/>
-        <Label text="hometext"/>
-        <button @tap="$router.replace('/login')" style="btn_login">Login</button>
-        <button @tap="$router.replace('/register')" style="btn_register">Registarse</button>    
-    </StackLayout>
+    <FlexBoxLayout flexDirection="column" class="dad">
+        
+        <button @tap="$router.replace('/init')" >Entrar</button>
+        
+        <FlexBoxLayout justifyContent="space-between" >
+            <button @tap="$router.replace('/login')" class="btn-home btn" >Iniciar Sesion</button>
+            <button @tap="$router.replace('/register')" class="btn-home btn" >Registrarse</button>    
+        </FlexBoxLayout>
+       
+        
+    </FlexBoxLayout>
 </template>
-
-<script>
-  export default {
-      data() {
-          return {
-              hometext: 'Esta es llllllllldfdfdflll'
-          }
-      }
-  };
-</script>
 
 <style scoped>
 
+.dad{
+    padding: 10;
+    background: #f5f6fa;
+}
+
+
+button{
+    font-size: 16;
+    padding: 20 0;
+    background-color: #40739e;
+    color: #fff;
+}
+
+.btn{
+    background-color: #fff;
+    color: #40739e;
+    width: 160;
+}
+
 </style>
+
