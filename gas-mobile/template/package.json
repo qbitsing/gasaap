@@ -1,17 +1,18 @@
 {
-	"description": "NativeScript-Vue application",
-	"license": "MIT",
-	"readme": "gasmobile",
-	"nativescript": {
-		"id": "org.nativescript.application"
-	},
-	"dependencies": {
-		"tns-core-modules": "3.4.0"
-	},
-	"devDependencies": {
-		"babel-traverse": "6.26.0",
-		"babel-types": "6.26.0",
-		"babylon": "6.18.0",
-		"lazy": "1.0.11"
-	}
+  "description": "NativeScript-Vue application",
+  "license": "MIT",
+  "readme": "gasmobile",
+  "nativescript": {
+    "id": "com.publiservicios.gasapp"
+  },
+  "dependencies": {
+    "nativescript-vue": "^1.2.0",
+    "tns-core-modules": "~3.4.1"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11"
+  }
 }

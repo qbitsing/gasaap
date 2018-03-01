@@ -1,17 +1,22 @@
 <template>
-    <FlexBoxLayout flexDirection="column" class="dad">
-        
-        <button @tap="$router.replace('/init')" >Entrar</button>
-        
-        <FlexBoxLayout justifyContent="space-between" >
-            <button @tap="$router.replace('/login')" class="btn-home btn" >Iniciar Sesion</button>
-            <button @tap="$router.replace('/register')" class="btn-home btn" >Registrarse</button>    
+    <Page actionBarHidden="true">
+        <FlexBoxLayout flexDirection="column" class="dad">
+            <button @tap="$router.push('/panel')" >Entrar</button>
+            <FlexBoxLayout justifyContent="space-between" >
+                <button @tap="$router.push('/login')" class="btn-home btn" >Iniciar Sesion</button>
+                <button @tap="$router.push('/register')" class="btn-home btn" >Registrarse</button>    
+            </FlexBoxLayout>
         </FlexBoxLayout>
-       
-        
-    </FlexBoxLayout>
+    </Page>
 </template>
-
+<script>
+    export default {
+        created() {
+            // if(application.android) {
+            // }
+        }
+    }
+</script>
 <style scoped>
 
 .dad{

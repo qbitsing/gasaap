@@ -1,10 +1,12 @@
 <template>
-  <StackLayout>
-        <Label :text="labelText"/>
-        <image src="~/assets/images/hola.png" />
-        <button @tap="$router.replace('/home')">Volver</button>  
-        <button @tap="$router.replace('/init')">Registrarse</button>  
-    </StackLayout>
+    <Page actionBarHidden="true">
+        <StackLayout>
+            <Label :text="labelText"/>
+            <image src="~/assets/images/hola.png" />
+            <button @tap="$router.push('/home')">Volver</button>  
+            <button @tap="$router.push('/init')">Registrarse</button>  
+        </StackLayout>
+    </Page>
 </template>
 <script>
     export default {

@@ -41,17 +41,19 @@ class Usuario {
     public function login () {
         $email = $_POST['email'];
         $password = md5($_POST['password']);
-        $query = 'SELECT * FROM users WHERE email=? AND password=?';
+        $query = 'SELECT * FROM users WHERE email=?';
         $statement = $this->cnx->prepare($query);
-        if($statement->execute(array($email, $password))) {
+        if($statement->execute(array($email))) {
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             if(isset($result[0])) {
-                $this->response = array(
-                    'status' => 200,
-                    'message' => 'Bienvenido',
-                    'userData' => $result[0]
-                );
-            } else $this->displayError('Error de credenciales');
+                if(hash_equals($password,$result[0]['password'])) {
+                    $this->response = array(
+                        'status' => 200,
+                        'message' => 'Bienvenido',
+                        'userData' => $result
+                    );
+                } else $this->displayError('credenciales incorrectos');
+            } else $this->displayError('credenciales incorrectos');
         }
     }
     private function displayError($message) {
