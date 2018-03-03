@@ -4,6 +4,9 @@
     <ScrollView orientation="vertical">
       <StackLayout orientation="vertical">
         <Image src="~/images/stove.jpg"/>
+         <Image src="~/images/stove.jpg"/>
+          <Image src="~/images/stove.jpg"/>
+           <Image src="~/images/stove.jpg"/>
       </StackLayout>
     </ScrollView>
   </Page>
