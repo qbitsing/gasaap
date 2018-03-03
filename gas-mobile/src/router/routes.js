@@ -5,6 +5,9 @@ import Home from '../components/Home'
 import Register from '../components/Register'
 import Login from '../components/Login'
 import Panel from '../components/Panel'
+import Beneficios from '../components/Beneficios'
+import Instalacion from '../components/Instalacion'
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -14,6 +17,8 @@ const router = new VueRouter({
       {path: '/register', component: Register},
       {path: '/login', component: Login},
       {path: '/panel', component: Panel},
+      {path: '/panel/beneficios', component: Beneficios},
+      {path: '/panel/instalacion', component: Instalacion},
       {path: '*', redirect: '/home'}
     ]
   });

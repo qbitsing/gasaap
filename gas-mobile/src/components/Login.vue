@@ -1,11 +1,11 @@
 <template>
     <Page actionBarHidden="true">
         <StackLayout>
-            <label text="login"/>
+            <label text="log in"/>
             <TextField hint="E-mail." returnKeyType="next" v-model="email" />
             <TextField hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />
-            <button @tap="logIn">Iniciar sesion</button>
-            <button @tap="$router.push('/home')">Volver</button>
+            <button class="login" @tap="logIn">Iniciar sesion</button>
+            <button class="volver" @tap="$router.push('/home')">Volver</button>
         </StackLayout>
     </Page>
 </template>
@@ -44,3 +44,38 @@
         }
     }
 </script>
+<style scoped>
+    label {
+        font-size: 30;
+        text-align: center;
+        text-transform: uppercase;
+    }    
+
+    StackLayout {
+        padding: 25;
+    }
+
+    Button, TextField {
+        margin-top: 6;
+        border-radius: 50;
+    }
+
+    .login {
+        margin-top: 20;
+        background: #35a3;
+        color: #fff;
+    }
+
+    TextField {
+        margin-top: 20;
+        background: rgba(30,30,30,.4);
+        padding: 10 15;
+        color: #fff;
+    }
+
+    .volver{
+        width: 100;
+        height: 40;
+    }
+</style>
+
