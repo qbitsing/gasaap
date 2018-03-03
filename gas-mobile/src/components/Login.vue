@@ -5,7 +5,7 @@
             <TextField hint="E-mail." returnKeyType="next" v-model="email" />
             <TextField hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />
             <button class="login" @tap="logIn">Iniciar sesion</button>
-            <button @tap="$router.push('/home')">Volver</button>
+            <button class="volver" @tap="$router.push('/home')">Volver</button>
         </StackLayout>
     </Page>
 </template>
@@ -50,23 +50,32 @@
         text-align: center;
         text-transform: uppercase;
     }    
+
     StackLayout {
         padding: 25;
     }
+
     Button, TextField {
+        margin-top: 6;
         border-radius: 50;
-        margin-top: 7;
     }
+
     .login {
         margin-top: 20;
         background: #35a3;
         color: #fff;
     }
+
     TextField {
         margin-top: 20;
         background: rgba(30,30,30,.4);
         padding: 10 15;
         color: #fff;
+    }
+
+    .volver{
+        width: 100;
+        height: 40;
     }
 </style>
 

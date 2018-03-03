@@ -1,12 +1,11 @@
 <template>
     <Page actionBarHidden="true">
-        <FlexBoxLayout flexDirection="column" class="dad">
+         <StackLayout class="dad">
             <button @tap="$router.push('/panel')" >Entrar</button>
-            <FlexBoxLayout justifyContent="space-between" >
-                <button @tap="$router.push('/login')" class="btn-home btn" >Iniciar Sesion</button>
-                <button @tap="$router.push('/register')" class="btn-home btn" >Registrarse</button>    
-            </FlexBoxLayout>
-        </FlexBoxLayout>
+                <button @tap="$router.push('/login')" class=" btn" >Iniciar Sesion</button>
+                <button @tap="$router.push('/register')" class="btn" >Registrarse</button>    
+            
+        </StackLayout>
     </Page>
 </template>
 <script>
@@ -20,22 +19,24 @@
 <style scoped>
 
 .dad{
-    padding: 10;
+    padding: 24;
     background: #f5f6fa;
 }
 
 
 button{
     font-size: 16;
-    padding: 20 0;
+    padding: 10 0;
     background-color: #40739e;
     color: #fff;
+    margin-top: 7;
+    border-radius: 50;
 }
 
 .btn{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, .8);
     color: #40739e;
-    width: 160;
+    border:1 solid #000;
 }
 
 </style>
