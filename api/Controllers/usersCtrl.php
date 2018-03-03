@@ -21,12 +21,11 @@ class Usuario {
         } else $this->displayError('La creación de usuarios solo permite el método POST');
     }
     private function create() {
-        if (isset($_POST['name']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone'])) {
+        if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone'])) {
             $password = md5($_POST['password']);
-            $query = 'INSERT INTO users SET name=:nombre, last_name=:apellido, email=:email, password=:password, phone=:telefono';
+            $query = 'INSERT INTO users SET name=:nombre, email=:email, password=:password, phone=:telefono';
             $sentence = $this->cnx->prepare($query);
             $sentence->bindParam(':nombre', $_POST['name']);
-            $sentence->bindParam(':apellido', $_POST['lastName']);
             $sentence->bindParam(':email', $_POST['email']);
             $sentence->bindParam(':password', $password);
             $sentence->bindParam(':telefono', $_POST['phone']);
