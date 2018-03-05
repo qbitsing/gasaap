@@ -1,12 +1,12 @@
 <template>
     <Page actionBarHidden="true">
-        <StackLayout>
-            <label text="log in"/>
-            <TextField hint="E-mail." returnKeyType="next" v-model="email" />
-            <TextField hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />
-            <button class="login" @tap="logIn">Iniciar sesion</button>
+        <FlexboxLayout flexDirection="column-reverse">
             <button class="volver" @tap="$router.push('/home')">Volver</button>
-        </StackLayout>
+            <button class="login" @tap="logIn" >Iniciar sesion</button>
+            <TextField hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />            
+            <TextField hint="E-mail." returnKeyType="next" v-model="email" />
+            <label text="Inicia Sesión."/> 
+        </FlexboxLayout>
     </Page>
 </template>
 <script>
@@ -45,37 +45,50 @@
     }
 </script>
 <style scoped>
-    label {
-        font-size: 30;
-        text-align: center;
-        text-transform: uppercase;
-    }    
+     
+    Page {
+        background: url('~/images/3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
+    }
 
-    StackLayout {
+    label{
+        text-align: center;
+        color: #fff;
+        font-size: 20;
+        margin-bottom: 10;
+    }
+
+    FlexboxLayout {
         padding: 25;
     }
 
     Button, TextField {
         margin-top: 6;
         border-radius: 50;
+        color: #fff;
+        font-size: 16;
     }
 
     .login {
+        font-weight:  700;        
         margin-top: 20;
         background: #35a3;
-        color: #fff;
+     
     }
 
     TextField {
         margin-top: 20;
-        background: rgba(30,30,30,.4);
+        background: rgba(35,30,30,.4);
         padding: 10 15;
-        color: #fff;
+        placeholder-color: #fff;
     }
 
     .volver{
-        width: 100;
+        width: 20;
         height: 40;
+        color: #fff;
     }
 </style>
 

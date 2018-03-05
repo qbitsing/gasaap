@@ -1,22 +1,13 @@
 <template>
     <Page actionBarHidden="true">
-        <TabView :selectedIndex="selectedIndex">
+        <TabView >
             
-            <TabViewItem title="uno" >
-                <TabView>
-                    <TabViewItem title="otro">
-                        <Label text="hola"></Label>
-                    </TabViewItem>
-                    <TabViewItem title="otro2">
-                        <Label text="hola2"></Label>
-                    </TabViewItem>
-                </TabView>
-            </TabViewItem>
-            <TabViewItem title="Úsalo siempre" >
+           
+            <TabViewItem title="Úsalo siempre"  >
                 <Image src="~/images/hola.png"/>
             </TabViewItem>
             <TabViewItem title="Mayor Utilidad">
-                <label text="Content for Tab 2"></label>
+                <label text="Content for Tab "></label>
             </TabViewItem>
             <TabViewItem title="Más seguridad">
                 <label text="Content for Tab 2"></label>
@@ -29,5 +20,7 @@
 </template>
 
 <style scoped>
-    
+
+
+
 </style
