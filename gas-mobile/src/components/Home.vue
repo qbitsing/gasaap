@@ -1,10 +1,16 @@
 <template>
     <Page actionBarHidden="true">
-         <StackLayout class="dad">
-            <button @tap="$router.push('/panel')" >Entrar</button>
-            <button @tap="$router.push('/login')" class=" btn" >Iniciar Sesion</button>
-            <button @tap="$router.push('/register')" class="btn" >Registrarse</button>    
-        </StackLayout>
+         <FlexboxLayout flexDirection="column-reverse" class="dad">
+         <FlexboxLayout justifyContent	="space-between">
+             
+            <button @tap="$router.push('/login')" class=" btn" borderWidth="3" borderColor="#40739e">Iniciar Sesion</button>
+            <button @tap="$router.push('/register')" class="btn" borderWidth="3" borderColor="#40739e">Registrarse</button>   
+         </FlexboxLayout> 
+            <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
+            <label text="Registrate o Inicia Sesión."/>                   
+            
+           
+         </FlexboxLayout>
     </Page>
 </template>
 <script>
@@ -18,24 +24,40 @@
 <style scoped>
 
 .dad{
-    height: 290;
     padding: 15;
 }
-Page {
-    background: url('~/images/4.jpg');
-}
-button{
-    font-size: 16;
-    padding: 10 0;
-    background-color: #40739e;
+
+label{
+    text-align: center;
     color: #fff;
-    margin-top: 7;
-    border-radius: 50;
+    font-size: 20;
+    margin-bottom: 10;
 }
 
-.btn{
-    border:1 solid #000;
+Page {
+   
+    background: url('~/images/7.jpg') ;
+    opacity: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+Button{
+    font-size: 16;
+    padding: 15 0;
+    margin-top: 7;
+    color: #40739e;
+    width: 130;
+    background-color: #fff;
+}
+
+.btn-entrar{
+    background-color: #40739e ;
+    color: #fff;
+}
+
+
 
 </style>
 

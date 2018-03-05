@@ -3,8 +3,8 @@
     <ActionBar title="Publiservicios" flat="true"/>      
     <StackLayout orientation="vertical">
       <Image src="~/images/stove.jpg"/>
-       <ListView for="item in items" @itemTap="onItemTap">
-        <v-template >
+       <ListView for="item in items" @itemTap="onItemTap" >
+        <v-template  >
           <Label :text="item.text" class="listView"/>
         </v-template>
       </ListView> 
@@ -37,9 +37,13 @@
     
   }
 
+  listView{
+    border:0 !important;
+  }
+
   .listView{
     color: #000;
-    font-size: 17;
+    font-size: 16;
     padding: 20;
   }
 </style>
