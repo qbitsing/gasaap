@@ -1,6 +1,6 @@
 <template>
     <Page actionBarHidden="true">
-        <TabView  selectedColor="#FF0000">
+        <TabView >
             
            
             <TabViewItem title="Úsalo siempre"  >
@@ -20,6 +20,7 @@
 </template>
 
 <style scoped>
+
 
 
 </style

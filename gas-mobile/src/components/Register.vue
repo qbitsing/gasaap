@@ -3,7 +3,7 @@
         <FlexboxLayout flexDirection="column-reverse">
             <button class="volver" @tap="$router.push('/home')" >Volver</button>  
             <button @tap="$router.push('/init')" class="registrer" >Registrarse</button>  
-            <TextField hint="Teléfono" v-model="cellphone"/>
+            <TextField hint="Teléfono" v-model="phone"/>
             <TextField hint="Nombres y Apellidos" v-model="name"/>
             <TextField hint="Contraseña." secure="true"  v-model="password" />
             <TextField hint="Confirmar Contraseña." secure="true" v-model="confirmPassword"  />            
@@ -17,7 +17,7 @@
 export default {
     data() {
             return {
-                cellphone: null,
+                phone: null,
                 name: null,                
                 password: null,
                 confirmPassword: null,
@@ -25,13 +25,13 @@ export default {
             }
         },
         methods: {
-            logIn() {
+            create() {
                 const body = new FormData()
-                body.append('cellphone', this)
-                body.append('name', this)              
+                body.append('phone', this.phone)
+                body.append('name', this.name)              
                 body.append('email', this.email)
                 body.append('password', this.password)
-               // if(password == confirmPassword){
+            
                 fetch('http://192.168.1.38/gasApp/api/usuarios/create', {
                     method: 'POST',
                     body
@@ -51,6 +51,7 @@ export default {
                     }
                 })
             }
+            
             }
         }
 </script>
@@ -93,7 +94,6 @@ export default {
         background: rgba(35,30,30,.4);
         padding: 10 15;
         placeholder-color: #fff;
-        
     }
 
     .volver{

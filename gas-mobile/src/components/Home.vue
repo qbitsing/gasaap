@@ -1,15 +1,10 @@
 <template>
     <Page actionBarHidden="true">
-         <FlexboxLayout flexDirection="column-reverse" class="dad">
-         <FlexboxLayout justifyContent	="space-between">
-             
-            <button @tap="$router.push('/login')" class=" btn" borderWidth="3" borderColor="#40739e">Iniciar Sesion</button>
-            <button @tap="$router.push('/register')" class="btn" borderWidth="3" borderColor="#40739e">Registrarse</button>   
-         </FlexboxLayout> 
+         <FlexboxLayout flexDirection="column-reverse" class="dad">     
+            <button @tap="$router.push('/login')" class=" btn" borderWidth="3" borderColor="#fff">Iniciar Sesion</button>
+            <button @tap="$router.push('/register')" class="btn" borderWidth="3" borderColor="#fff">Registrarse</button>   
             <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
             <label text="Registrate o Inicia Sesión."/>                   
-            
-           
          </FlexboxLayout>
     </Page>
 </template>
@@ -45,16 +40,15 @@ Page {
 
 Button{
     font-size: 16;
-    padding: 15 0;
+    padding: 10 0;
     margin-top: 7;
-    color: #40739e;
+    color: #fff;
     width: 130;
-    background-color: #fff;
+    border-radius: 50;
 }
 
 .btn-entrar{
     background-color: #40739e ;
-    color: #fff;
 }
 
 

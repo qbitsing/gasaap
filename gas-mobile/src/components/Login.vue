@@ -47,7 +47,7 @@
 <style scoped>
      
     Page {
-        background: url('~/images/nn.jpg');
+        background: url('~/images/3.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: left;
