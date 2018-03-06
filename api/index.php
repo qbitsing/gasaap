@@ -18,8 +18,7 @@ switch ($resource) {
     break;
     case 'mail':
         include_once 'Controllers/mailCtrl.php';
-        $mail = new Mail($action);
-        $response = $mail->response;
+        $instance = new Mail($action);
     break;
     default: 
      $response = array(

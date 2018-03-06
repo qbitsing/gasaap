@@ -1,10 +1,9 @@
 <template>
     <Page actionBarHidden="true">
          <FlexboxLayout flexDirection="column-reverse" class="dad">     
-            <button @tap="$router.push('/login')" class=" btn" borderWidth="3" borderColor="#fff">Iniciar Sesion</button>
-            <button @tap="$router.push('/register')" class="btn" borderWidth="3" borderColor="#fff">Registrarse</button>   
+            <button @tap="$router.push('/login')" class=" btn white">Iniciar Sesion</button>
+            <button @tap="$router.push('/register')" class="btn white" >Registrarse</button>   
             <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
-            <label text="Registrate o Inicia Sesión."/>                   
          </FlexboxLayout>
     </Page>
 </template>
@@ -20,6 +19,7 @@
 
 .dad{
     padding: 15;
+    margin-bottom: 40;
 }
 
 label{
@@ -30,28 +30,30 @@ label{
 }
 
 Page {
-   
     background: url('~/images/7.jpg') ;
-    opacity: 2;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 Button{
-    font-size: 16;
-    padding: 10 0;
+    /* font-size: 16; */
     margin-top: 7;
     color: #fff;
-    width: 130;
     border-radius: 50;
+    transition: .3s;
 }
-
 .btn-entrar{
-    background-color: #40739e ;
+    background-color: #40739e;
 }
-
-
-
+.btn-entrar:pressed{
+    background-color: #175e99;
+}
+.white {
+    background-color: #fff;
+    color: #000;
+}
+.white:pressed{
+    background-color: rgb(165, 164, 164);
+}
 </style>
-

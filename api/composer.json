@@ -1,0 +1,12 @@
+{
+    "name": "nicolas/api",
+    "require": {
+        "phpmailer/phpmailer": "^6.0"
+    },
+    "authors": [
+        {
+            "name": "Nicolás Arias",
+            "email": "nmarias38@misena.edu.co"
+        }
+    ]
+}

@@ -86,8 +86,6 @@
     }
 
     .volver{
-        width: 20;
-        height: 40;
         color: #fff;
     }
 </style>

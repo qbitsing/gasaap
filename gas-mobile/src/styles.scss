@@ -2,3 +2,6 @@ $label-color: royalblue;
 Label {
   color: $label-color;
 }
+Button:pressed {
+  transform: scale(.97);
+}

@@ -1,15 +1,14 @@
 <template>
     <Page actionBarHidden="true">
-        <FlexboxLayout flexDirection="column-reverse">
-            <button class="volver" @tap="$router.push('/home')" >Volver</button>  
-            <button @tap="$router.push('/init')" class="registrer" >Registrarse</button>  
-            <TextField hint="Teléfono" v-model="phone"/>
-            <TextField hint="Nombres y Apellidos" v-model="name"/>
+        <FlexboxLayout flexDirection="column">
+            <label text="Regístrate."/>     
+            <TextField hint="E-mail." v-model="email" />  
             <TextField hint="Contraseña." secure="true"  v-model="password" />
             <TextField hint="Confirmar Contraseña." secure="true" v-model="confirmPassword"  />            
-            <TextField hint="E-mail." v-model="email" />  
-            <label text="Registrate."/>          
-            
+            <TextField hint="Nombres y Apellidos" v-model="name"/>
+            <TextField hint="Teléfono" v-model="phone"/>
+            <button @tap="create" class="registrer" >Registrarse</button>
+            <button class="volver" @tap="$router.push('/home')" >Volver</button>  
         </FlexboxLayout>
     </Page>
 </template>
@@ -25,6 +24,9 @@ export default {
             }
         },
         methods: {
+            verifyPasswords() {
+
+            },
             create() {
                 const body = new FormData()
                 body.append('phone', this.phone)
@@ -32,7 +34,7 @@ export default {
                 body.append('email', this.email)
                 body.append('password', this.password)
             
-                fetch('http://192.168.1.38/gasApp/api/usuarios/create', {
+                fetch('http://192.168.1.9/gasApp/api/usuarios/create', {
                     method: 'POST',
                     body
                 })
@@ -40,15 +42,10 @@ export default {
                 .then(e => {
                     console.log(e)
                     if(e.status == 200) {
-                        console.log('Correcto')
-                        this.$router.push('/panel')
+                         this.$router.push('/panel')
                     } else {
-                        console.log('Incorrecto')
-                        alert(e.message)
-                        .then(() => {
-                        console.log("Dialog closed")
-                        })
-                    }
+                         alert(e.message)
+                     }
                 })
             }
             
@@ -91,15 +88,9 @@ export default {
 
     TextField {
         margin-top: 20;
-        background: rgba(35,30,30,.4);
+        background: rgba(82, 69, 69, 0.473);
+        placeholder-color: rgba(0, 0, 0, 0.7);
         padding: 10 15;
-        placeholder-color: #fff;
     }
-
-    .volver{
-        width: 100;
-        height: 40;
-    }
-
 
 </style>
