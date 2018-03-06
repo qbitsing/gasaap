@@ -4,8 +4,11 @@
     <StackLayout orientation="vertical">
       <Image src="~/images/stove.jpg"/>
        <ListView for="item in items" @itemTap="onItemTap" >
-        <v-template  >
-          <Label :text="item.text" class="listView"/>
+        <v-template>
+          <StackLayout class="list-item" orientation="horizontal">
+            <Label :text="item.icon" class="icon"/>
+            <Label :text="item.text"/>
+          </StackLayout>
         </v-template>
       </ListView> 
      
@@ -17,9 +20,9 @@
     data(){
       return{
         items :[
-          {text: 'Beneficios del gas natural', route: '/beneficios'},
-          {text: 'Procesos y costos de instalación', route: '/instalacion'},
-          {text: 'Reportar un problema con el gas natural', route: '/home'}
+          {icon: 'e916', text: 'Beneficios del gas natural', route: '/beneficios'},
+          {icon: 'e991', text: 'Procesos y costos de instalación', route: '/instalacion'},
+          {icon: 'ea08', text: 'Reportar un problema con el gas natural', route: '/home'}
         ]
       }
     },
@@ -34,16 +37,11 @@
   ActionBar {
     background: #338adf;
     color:#fff;
-    
   }
-
-  listView{
-    border:0 !important;
+  .list-item {
+    padding: 10;
   }
-
-  .listView{
-    color: #000;
-    font-size: 16;
-    padding: 20;
+  .list-item Label {
+    font-size: 18;
   }
 </style>

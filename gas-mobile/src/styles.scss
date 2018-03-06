@@ -2,6 +2,30 @@ $label-color: royalblue;
 Label {
   color: $label-color;
 }
+Button {
+  margin-top: 10;
+  border-radius: 50;
+  color: #fff;
+}
 Button:pressed {
   transform: scale(.97);
+}
+TextField {
+  font-size: 16;
+  margin-top: 10;
+  border-radius: 50;
+  background: transparent;
+  placeholder-color: #fff;
+  padding: 10;
+}
+.icon {
+  font-family: 'icomoon';
+  color: red;
+}
+.first-page {
+  padding: 15;
+  background: url('~/images/nnnn.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
