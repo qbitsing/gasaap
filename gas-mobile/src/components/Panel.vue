@@ -20,7 +20,7 @@
     data(){
       return{
         items :[
-          {icon: 'e916', text: 'Beneficios del gas natural', route: '/beneficios'},
+          {icon: String.fromCharCode('0xe903'), text: 'Beneficios del gas natural', route: '/beneficios'},
           {icon: 'e991', text: 'Procesos y costos de instalación', route: '/instalacion'},
           {icon: 'ea08', text: 'Reportar un problema con el gas natural', route: '/home'}
         ]
