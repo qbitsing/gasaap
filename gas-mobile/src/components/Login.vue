@@ -1,6 +1,6 @@
 <template>
     <Page actionBarHidden="true">
-        <FlexboxLayout flexDirection="column-reverse">
+        <FlexboxLayout flexDirection="column">
             <button class="volver" @tap="$router.push('/home')">Volver</button>
             <button class="login" @tap="logIn" >Iniciar sesion</button>
             <TextField hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />            

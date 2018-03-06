@@ -37,7 +37,6 @@ Page {
 }
 
 Button{
-    /* font-size: 16; */
     margin-top: 7;
     color: #fff;
     border-radius: 50;
