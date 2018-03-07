@@ -1,5 +1,5 @@
 <template>
-    <Page actionBarHidden="true">
+    <Page>
         <TabView :selectedIndex="selectedIndex" tabTextColor="#fff"    selectedTabTextColor="#fff" androidSelectedTabHighlightColor="#fff"  tabBackgroundColor="#fff">
             <TabViewItem title="Proceso">
                 <TabView >

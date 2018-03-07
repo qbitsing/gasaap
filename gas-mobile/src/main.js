@@ -5,5 +5,6 @@ import './styles.scss'
 
 router.replace('/home')
 new Vue({
+  store,
   router
 }).$start()

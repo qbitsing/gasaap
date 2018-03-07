@@ -32,7 +32,7 @@ class Usuario {
             $statement = $this->cnx->prepare($query);
             if($statement->execute(array($_POST['email']))){
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                if($count[0]) $this->displayError(0, 'Ya hay un usuario creado con ese email');
+                if(count($result) > 0) $this->displayError(0, 'Ya hay un usuario creado con ese email');
                 else {
                     $password = md5($_POST['password']);
                     $query = 'INSERT INTO users SET name=:nombre, email=:email, password=:password, phone=:telefono';

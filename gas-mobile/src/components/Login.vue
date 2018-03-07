@@ -12,39 +12,34 @@
     </Page>
 </template>
 <script>
-    export default {
-        data() {
-            return {
-                email: null,
-                password: null
-            }
-        },
-        methods: {
-            logIn() {
-                const body = new FormData()
-                body.append('email', this.email)
-                body.append('password', this.password)
-                fetch('http://192.168.1.38/gasApp/api/usuarios/login', {
-                    method: 'POST',
-                    body
-                })
-                .then(e => e.json())
-                .then(e => {
-                    console.log(e)
-                    if(e.status == 200) {
-                        console.log('Correcto')
-                        this.$router.push('/panel')
-                    } else {
-                        console.log('Incorrecto')
-                        alert(e.message)
-                        .then(() => {
-                        console.log("Dialog closed")
-                        })
-                    }
-                })
-            }
+export default {
+    data() {
+        return {
+            email: null,
+            password: null
+        }
+    },
+    methods: {
+        logIn() {
+            const body = new FormData()
+            body.append('email', this.email)
+            body.append('password', this.password)
+            fetch('http://192.168.1.38/gasApp/api/usuarios/login', {
+                method: 'POST',
+                body
+            })
+            .then(e => e.json())
+            .then(e => {
+                console.log(e)
+                if(e.status == 200) {
+                    console.log('Correcto')
+                    this.$store.commit('setUser', e.userData)
+                    this.$router.push('/panel')
+                } else alert(e.message)
+            })
         }
     }
+}
 </script>
 <style scoped>
     label{
