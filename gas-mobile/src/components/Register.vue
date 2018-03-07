@@ -1,7 +1,7 @@
 <template>
     <Page class="first-page" actionBarHidden="true">
         <FlexboxLayout flexDirection="column" justifyContent="space-between">
-               <label text="Regístrate."/>     
+               <label text="Regístrate."/>
             <FlexboxLayout flexDirection="column" justifyContent="center">   
                 <TextField borderWidth="1" borderColor="#eee" hint="E-mail." v-model="email" />  
                 <TextField borderWidth="1" borderColor="#eee" hint="Contraseña." secure="true" v-model="password" />

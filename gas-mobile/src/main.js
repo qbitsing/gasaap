@@ -1,10 +1,10 @@
 import Vue from 'nativescript-vue'
 import router from './router/routes'
-import store from './store'
+// import store from './store'
 import './styles.scss'
 
 router.replace('/home')
 new Vue({
-  store,
+  // store,
   router
 }).$start()
