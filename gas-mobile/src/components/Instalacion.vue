@@ -1,7 +1,7 @@
 <template>
     <Page>
         <ActionBar title="Publiservicios" flat="true"/>      
-        <TabView :selectedIndex="selectedIndex" tabTextColor="#fff"    selectedTabTextColor="#fff" androidSelectedTabHighlightColor="#fff"  tabBackgroundColor="#fff">
+        <TabView :selectedIndex="selectedIndex" tabTextColor="#fff" selectedTabTextColor="#fff" androidSelectedTabHighlightColor="#fff"  tabBackgroundColor="#fff">
             <TabViewItem title="Proceso">
                 <TabView >
                     <TabViewItem title="otro">

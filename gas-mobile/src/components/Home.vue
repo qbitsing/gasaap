@@ -1,5 +1,5 @@
 <template>
-    <Page class="first-page" actionBarHidden="true">
+    <Page class="first-page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
          <FlexboxLayout flexDirection="column" justifyContent="space-between">
             <StackLayout class="logo">
             <Image src="~/images/logo.jpg"/>
@@ -16,6 +16,9 @@
     export default {
         created() {
             // if(application.android) {
+            //     alert('es android')
+            // } else {
+            //     alert('es ios')
             // }
         }
     }

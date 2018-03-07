@@ -2,6 +2,7 @@ Button {
   margin-top: 10;
   border-radius: 50;
   color: #fff;
+  padding: 0;
 }
 Button:pressed {
   transform: scale(.97);
