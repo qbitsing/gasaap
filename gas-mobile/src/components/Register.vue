@@ -1,5 +1,6 @@
 <template>
-    <Page class="first-page" actionBarHidden="true">
+    <Page class="first-page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
+        <ActionBar title="Publiservicios" flat="true"/>
         <FlexboxLayout flexDirection="column" justifyContent="space-between">
                <label text="Regístrate."/>
             <FlexboxLayout flexDirection="column" justifyContent="center">   
@@ -39,6 +40,9 @@ export default {
             verifyPassword() {
                 return this.password === this.confirmPassword
             }
+        },
+        created () {
+            console.log(this)
         },
         methods: {
             create() {
