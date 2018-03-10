@@ -24,7 +24,7 @@ export default {
             const body = new FormData()
             body.append('email', this.email)
             body.append('password', this.password)
-            fetch('http://192.168.1.38/gasApp/api/usuarios/login', {
+            fetch('https://gasapp-api.herokuapp.com/usuarios/login', {
                 method: 'POST',
                 body
             })

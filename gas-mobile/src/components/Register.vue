@@ -29,31 +29,6 @@ import * as platform from "tns-core-modules/platform"
 import * as utils from "tns-core-modules/utils/utils"
 import { mapActions } from 'vuex';
 export default {
-    created() {
-        if (application.ios) {
-            application.on("launch", () => {
-            utils.ios.getter(UIApplication, UIApplication.sharedApplication).statusBarStyle = UIStatusBarStyle.LightContent;
-            });
-        }
-
-        // Make the Android status bar transparent.
-        // See http://bradmartin.net/2016/03/10/fullscreen-and-navigation-bar-color-in-a-nativescript-android-app/
-        // for details on the technique used.
-        if (application.android && platform.device.sdkVersion >= "21") {
-            application.android.on("activityStarted", () => {
-            const View = android.view.View;
-            const window = application.android.startActivity.getWindow();
-            window.setStatusBarColor(0x000000);
-
-            const decorView = window.getDecorView();
-            decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-            })
-        }
-    },
     data() {
             return {
                 alertText: null,
@@ -79,7 +54,7 @@ export default {
                         body.append('email', this.email)
                         body.append('password', this.password)
                         console.log('create')
-                        fetch('http://192.168.1.9/gasApp/api/usuarios/create', {
+                        fetch('https://gasapp-api.herokuapp.com/usuarios/create', {
                             method: 'POST',
                             body
                         })
