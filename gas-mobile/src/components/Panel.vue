@@ -19,6 +19,7 @@
   import {mapState} from 'vuex'
   export default {
     created () {
+      console.log(this.$store)
       console.log(this.userData)
     },
     computed: mapState(['userData']),

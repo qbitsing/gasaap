@@ -1,13 +1,17 @@
 <template>
     <Page class="first-page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
          <FlexboxLayout flexDirection="column" justifyContent="center">
-            <!-- <StackLayout class="logo">
-            <Image src="~/images/logo.jpg"/>
-            </StackLayout> -->
-            <StackLayout class="buttons">
-                <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
-                <button @tap="$router.push('/login')" class=" btn white">Iniciar Sesion</button>
-                <button @tap="$router.push('/register')" class="btn white" >Registrarse</button>   
+            <StackLayout class="container">
+                <StackLayout class="logo">
+                    <Image src="~/images/logo.jpg"/>
+                </StackLayout>
+                <FlexboxLayout class="buttons" flexDirection="column">
+                    <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
+                    <FlexboxLayout>
+                        <button @tap="$router.push('/login')" class="btn white">Iniciar Sesion</button>
+                        <button @tap="$router.push('/register')" class="btn white" >Registrarse</button>   
+                    </FlexboxLayout>
+                </FlexboxLayout>
             </StackLayout>
          </FlexboxLayout>
     </Page>
@@ -15,37 +19,33 @@
 <script>
     export default {
         created() {
-            // if(application.android) {
-            //     alert('es android')
-            // } else {
-            //     alert('es ios')
-            // }
+            console.log(this.$store)
         }
     }
 </script>
 <style scoped>
-Page {
-    padding: 0;
-}
-.logo {
-    margin-top: 70;
-    padding: 40;
+.container {
+    width: 80%;
+    padding: 35;
+    height: 300;
     background: #fff;
 }
 .buttons {
-    padding: 15;
+    margin-top: 20;
 }
+/* .logo {
+    padding: 40;
+} */
 .btn-entrar{
-    background-color: #26970f;
+    background-color: #40739e;;
 }
-.btn-entrar:pressed{
+ /* .btn-entrar:pressed{
     background-color: #175e99;
-}
+} */
 .white {
-    background-color: #40739e;
-    color: #fff;
+    width: 50%;
 }
-.white:pressed{
+/* .white:pressed{
     background-color: rgb(165, 164, 164);
-}
+} */
 </style>
