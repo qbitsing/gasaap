@@ -24,9 +24,14 @@
     }
 </script>
 <style scoped>
+Page {
+    padding: 0;
+}
 .container {
     width: 80%;
+    margin: 20;
     padding: 35;
+    border-radius: 2;
     height: 300;
     background: #fff;
 }
