@@ -1,8 +1,6 @@
 <template>
     <Page class="first-page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
-        <ActionBar title="Publiservicios" flat="true"/>
-        <StackLayout>
-            <FlexboxLayout flexDirection="column" justifyContent="space-between">
+            <FlexboxLayout class="margin" flexDirection="column" justifyContent="space-between">
                 <label text="Regístrate."/>
                 <FlexboxLayout flexDirection="column" justifyContent="center">   
                     <TextField borderWidth="1" borderColor="#eee" hint="E-mail." v-model="email" />  
@@ -15,7 +13,6 @@
                 </FlexboxLayout>
                 <button class="volver" @tap="$router.push('/home')" >Volver</button>  
             </FlexboxLayout>
-        </StackLayout>
     </Page>
 </template>
 <style>

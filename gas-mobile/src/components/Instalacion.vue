@@ -1,7 +1,9 @@
 <template>
     <Page>
-        <ActionBar title="Publiservicios" flat="true"/>      
-        <TabView :selectedIndex="selectedIndex" tabTextColor="#fff" selectedTabTextColor="#fff" androidSelectedTabHighlightColor="#fff"  tabBackgroundColor="#fff">
+        <ActionBar title="Publiservicios">
+            <NavigationButton text="Atrás" android.systemIcon="ic_menu_back" @tap="goBack" />
+        </ActionBar>    
+        <TabView :selectedIndex="selectedIndex">
             <TabViewItem title="Proceso">
                 <TabView >
                     <TabViewItem title="otro">

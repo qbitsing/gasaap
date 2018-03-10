@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0;
 }
+ActionBar {
+  background: #1c81e6;
+  color:#fff;
+}
 Button {
   margin-top: 5;
   // border-radius: 50;
   color: #fff;
-  // padding: 15;
+  padding: 10;
 }
 Button:pressed {
   transform: scale(.97);
@@ -17,20 +21,23 @@ ActionBar {
 TextField {
   font-size: 16;
   margin-top: 10;
-  border-radius: 50;
+  // border-radius: 50;
   background: transparent;
   placeholder-color: #fff;
   color: #fff;
   padding: 10;
 }
+.margin {
+  margin: 30 25;
+}
 .icon {
   font-family: 'icomoon';
-  color: #40739e;
+  color: #338adf;
   margin-right: 5;
   font-size: 26;
 }
 .first-page {
-  padding: 15;
+  // padding: 15;
   background: url('~/images/nn.jpg') ;
   background-repeat: no-repeat;
   background-size: cover;

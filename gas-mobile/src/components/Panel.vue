@@ -1,9 +1,11 @@
 <template>
   <Page>
-    <ActionBar title="Publiservicios" flat="true"/>      
+    <ActionBar title="Publiservicios">
+        <NavigationButton text="Atrás" android.systemIcon="ic_menu_back" @tap="goBack" />
+    </ActionBar>        
     <StackLayout orientation="vertical">
       <Image src="~/images/stove.jpg"/>
-       <ListView for="item in items" @itemTap="onItemTap"  >
+       <ListView separatorColor="transparent" borderWidth="1" borderColor="#000" class="list" for="item in items" @itemTap="onItemTap"  >
         <v-template>
           <StackLayout class="list-item" orientation="horizontal" >
             <Label :text="item.icon" class="icon" />
@@ -28,7 +30,7 @@
         items :[
           {icon: String.fromCharCode('0xe903'), text: 'Beneficios del gas natural', route: '/beneficios'},
           {icon: String.fromCharCode('0xe991'), text: 'Procesos y costos de instalación', route: '/instalacion'},
-          {icon: String.fromCharCode('0xea08'), text: 'Reportar un problema con el gas natural', route: '/home'}
+          {icon: String.fromCharCode('0xea08'), text: 'Reportar un problema', route: '/home'}
         ]
       }
     },
@@ -40,15 +42,12 @@
   }
 </script>
 <style scoped>
-  ActionBar {
-    background: #338adf;
-    color:#fff;
+  .list {
+    height: 100%;
   }
   .list-item {
     padding: 14;
     font-size: 18; 
     color: #000;
   }
-
-
 </style>

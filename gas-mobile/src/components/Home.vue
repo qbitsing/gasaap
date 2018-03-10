@@ -7,9 +7,9 @@
                 </StackLayout>
                 <FlexboxLayout class="buttons" flexDirection="column">
                     <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
-                    <FlexboxLayout>
-                        <button @tap="$router.push('/login')" class="btn white">Iniciar Sesion</button>
-                        <button @tap="$router.push('/register')" class="btn white" >Registrarse</button>   
+                    <FlexboxLayout class="little" justifyContent="space-between">
+                        <button @tap="$router.push('/login')" class="white">Iniciar Sesion</button>
+                        <button @tap="$router.push('/register')" class="white" >Registrarse</button>   
                     </FlexboxLayout>
                 </FlexboxLayout>
             </StackLayout>
@@ -28,29 +28,22 @@ Page {
     padding: 0;
 }
 .container {
-    width: 80%;
     margin: 20;
     padding: 35;
     border-radius: 2;
-    height: 300;
     background: #fff;
 }
 .buttons {
     margin-top: 20;
 }
-/* .logo {
-    padding: 40;
-} */
 .btn-entrar{
-    background-color: #40739e;;
+    background-color: #338adf;;
 }
- /* .btn-entrar:pressed{
-    background-color: #175e99;
-} */
+.little {
+    margin-top: 7;
+}
 .white {
-    width: 50%;
+    background: #35a3;
+    width: 47%;
 }
-/* .white:pressed{
-    background-color: rgb(165, 164, 164);
-} */
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <Page class="first-page" actionBarHidden="true">
-        <FlexboxLayout flexDirection="column" justifyContent="space-between">
+    <Page class="first-page" actionBarHidden="true"  backgroundSpanUnderStatusBar="true">
+        <FlexboxLayout class="margin" flexDirection="column" justifyContent="space-between">
                 <label text="Inicia Sesión."/> 
             <FlexboxLayout flexDirection="column" justifyContent="center">
                 <TextField borderWidth="1" borderColor="#eee" hint="E-mail." returnKeyType="next" v-model="email" />
@@ -52,6 +52,7 @@ export default {
         margin-bottom: 10;
     }
     .login {
+        margin-top: 10;
         background: #35a3;
     }
     .volver{
