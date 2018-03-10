@@ -1,21 +1,11 @@
 <template>
     <Page>
         <ActionBar title="Publiservicios">
-            <NavigationButton text="Atrás" android.systemIcon="ic_menu_back" @tap="goBack" />
+            <NavigationButton text="Atrás" />
         </ActionBar>    
         <TabView :selectedIndex="selectedIndex">
-            <TabViewItem title="Proceso">
-                <TabView >
-                    <TabViewItem title="otro">
-                        <Label ref="tv" text="hola"></Label>
-                    </TabViewItem>
-                    <TabViewItem title="otro2">
-                        <Label text="hola2"></Label>
-                    </TabViewItem>
-                </TabView>
-            </TabViewItem>
-            <TabViewItem title="Costo" >
-                <Image src="~/images/hola.png"/>
+            <TabViewItem color="#f00" class="icon" sdkToggleNavButton v-for="item in items" :title="item.title" >
+                <Image :src="item.src"/>
             </TabViewItem>  
         </TabView>
     </Page>
@@ -25,6 +15,16 @@ export default {
     created() {
         const tb = this.$refs
         console.log(tb)
+    },
+    data() {
+        return {
+            items: [
+                { title: String.fromCharCode('0xe903'), src: '~/images/stove.jpg' },
+                { title: String.fromCharCode('0xe907'), src: '~/images/stove.jpg' },
+                { title: String.fromCharCode('0xe905'), src: '~/images/stove.jpg' },
+                { title: String.fromCharCode('0xe910'), src: '~/images/stove.jpg' },
+            ]
+        }
     }
 }
 </script>

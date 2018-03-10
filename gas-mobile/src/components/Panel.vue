@@ -1,7 +1,7 @@
 <template>
   <Page>
     <ActionBar title="Publiservicios">
-        <NavigationButton text="Atrás" android.systemIcon="ic_menu_back" @tap="goBack" />
+        <NavigationButton text="Atrás" />
     </ActionBar>        
     <StackLayout orientation="vertical">
       <Image src="~/images/stove.jpg"/>

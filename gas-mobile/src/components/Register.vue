@@ -11,7 +11,7 @@
                     <button @tap="create" class="registrer" >Registrarse</button>
                     <Label :text="alertText" class="show"></Label>
                 </FlexboxLayout>
-                <button class="volver" @tap="$router.push('/home')" >Volver</button>  
+                <button class="back" alignSelf="center" @tap="$router.push('/home')" >Volver</button>  
             </FlexboxLayout>
     </Page>
 </template>

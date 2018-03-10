@@ -7,7 +7,7 @@
                 <TextField borderWidth="1" borderColor="#eee" hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />            
                 <button class="login" @tap="logIn" >Iniciar sesion</button >
             </FlexboxLayout>
-            <button class="volver" @tap="$router.push('/home')">Volver</button>
+            <button class="back" @tap="$router.push('/home')">Volver</button>
         </FlexboxLayout>
     </Page>
 </template>
