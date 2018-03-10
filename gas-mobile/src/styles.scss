@@ -25,11 +25,13 @@ TextField {
 }
 .icon {
   font-family: 'icomoon';
-  color: red;
+  color: #40739e;
+  margin-right: 5;
+  font-size: 26;
 }
 .first-page {
   padding: 15;
-  background: url('~/images/road.jpg') ;
+  background: url('~/images/nn.jpg') ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

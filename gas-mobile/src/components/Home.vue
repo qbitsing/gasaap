@@ -1,9 +1,9 @@
 <template>
     <Page class="first-page" actionBarHidden="true" backgroundSpanUnderStatusBar="true">
-         <FlexboxLayout flexDirection="column" justifyContent="space-between">
-            <StackLayout class="logo">
+         <FlexboxLayout flexDirection="column" justifyContent="center">
+            <!-- <StackLayout class="logo">
             <Image src="~/images/logo.jpg"/>
-            </StackLayout>
+            </StackLayout> -->
             <StackLayout class="buttons">
                 <button @tap="$router.push('/panel')" class="btn-entrar" >Entrar</button>
                 <button @tap="$router.push('/login')" class=" btn white">Iniciar Sesion</button>
@@ -28,6 +28,7 @@ Page {
     padding: 0;
 }
 .logo {
+    margin-top: 70;
     padding: 40;
     background: #fff;
 }
@@ -35,14 +36,14 @@ Page {
     padding: 15;
 }
 .btn-entrar{
-    background-color: #40739e;
+    background-color: #26970f;
 }
 .btn-entrar:pressed{
     background-color: #175e99;
 }
 .white {
-    background-color: #fff;
-    color: #000;
+    background-color: #40739e;
+    color: #fff;
 }
 .white:pressed{
     background-color: rgb(165, 164, 164);
