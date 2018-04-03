@@ -3,9 +3,9 @@
         <FlexboxLayout class="margin" flexDirection="column" justifyContent="space-between">
                 <label text="Inicia Sesión."/> 
             <FlexboxLayout flexDirection="column" justifyContent="center">
-                <TextField borderWidth="1" borderColor="#eee" hint="E-mail." returnKeyType="next" v-model="email" />
-                <TextField borderWidth="1" borderColor="#eee" hint="Contraseña." returnKeyType="send" secure="true" v-model="password" />            
-                <button class="login" @tap="logIn" >Iniciar sesion</button >
+                <TextField borderWidth="1" borderColor="#eee" hint="E-mail" returnKeyType="next" v-model="email" />
+                <TextField borderWidth="1" borderColor="#eee" hint="Contraseña" returnKeyType="send" secure="true" v-model="password" />            
+                <button class="login" @tap="logIn" >Iniciar sesion</button>
             </FlexboxLayout>
             <button class="back" @tap="$router.push('/home')">Volver</button>
         </FlexboxLayout>
@@ -13,9 +13,6 @@
 </template>
 <script>
 export default {
-    created() {
-        console.log(this.$store)
-    },
     data() {
         return {
             email: null,
@@ -35,10 +32,14 @@ export default {
             .then(e => {
                 console.log(e)
                 if(e.status == 200) {
-                    console.log('Correcto')
-                    this.$store.commit('setUser', e.userData)
+                    this.password = null
+                    this.email = null
+                    this.$store.commit('SET_USER', e.userData[0])
                     this.$router.push('/panel')
-                } else alert(e.message)
+                } else {
+                    this.password = null
+                    alert(e.message)
+                }
             })
         }
     }

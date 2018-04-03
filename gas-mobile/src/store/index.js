@@ -1,19 +1,19 @@
 import Vue from 'nativescript-vue'
 import Vuex from 'vuex'
 
-import sesion from './modules/sesion'
-
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
 const store = new Vuex.Store({
-  modules: {
-    sesion
+  state: {
+    session: null
   },
-  strict: debug,
+  mutations: {
+    SET_USER (store, payload) {
+      store.session = payload
+    }
+  }
 })
 
-Vue.prototype.$store = store
-
-module.exports = store
+export default store

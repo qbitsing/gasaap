@@ -3,10 +3,11 @@
             <FlexboxLayout class="margin" flexDirection="column" justifyContent="space-between">
                 <label text="Regístrate."/>
                 <FlexboxLayout flexDirection="column" justifyContent="center">   
-                    <TextField borderWidth="1" borderColor="#eee" hint="E-mail." v-model="email" />  
-                    <TextField borderWidth="1" borderColor="#eee" hint="Contraseña." secure="true" v-model="password" />
-                    <TextField borderWidth="1" borderColor="#eee" hint="Confirmar Contraseña." secure="true" v-model="confirmPassword"  />            
+                    <TextField borderWidth="1" borderColor="#eee" hint="E-mail" v-model="email" />  
+                    <TextField borderWidth="1" borderColor="#eee" hint="Contraseña" secure="true" v-model="password" />
+                    <TextField borderWidth="1" borderColor="#eee" hint="Confirmar Contraseña" secure="true" v-model="confirmPassword"  />            
                     <TextField borderWidth="1" borderColor="#eee" hint="Nombres y Apellidos" v-model="name"/>
+                    <TextField borderWidth="1" borderColor="#eee" hint="Documento de Identidad" v-model="document"/>
                     <TextField borderWidth="1" borderColor="#eee" hint="Teléfono" v-model="phone"/>
                     <button @tap="create" class="registrer" >Registrarse</button>
                     <Label :text="alertText" class="show"></Label>
@@ -27,9 +28,6 @@ import * as application from "tns-core-modules/application"
 import * as platform from "tns-core-modules/platform"
 import * as utils from "tns-core-modules/utils/utils"
 export default {
-    created() {
-        console.log(this.$store)
-    },
     data() {
             return {
                 alertText: null,
@@ -37,7 +35,8 @@ export default {
                 name: null,                
                 password: null,
                 confirmPassword: null,
-                email: null                
+                email: null,
+                document: null             
             }
         },
         computed: {
@@ -54,6 +53,7 @@ export default {
                         body.append('name', this.name)              
                         body.append('email', this.email)
                         body.append('password', this.password)
+                        body.append('document', this.document)
                         console.log('create')
                         fetch('https://gasapp-api.herokuapp.com/usuarios/create', {
                             method: 'POST',
@@ -64,8 +64,11 @@ export default {
                             console.log(e)
                             if(e.status == 200) {
                                 this.$router.push('/panel')
-                                this.$store.commit('setUser', {
-                                    
+                                this.$store.commit('SET_USER', {
+                                    name: this.name,
+                                    phone: this.phone,
+                                    email: this.email,
+                                    document: this.document
                                 })
                             } else {
                                 alert(e.message)

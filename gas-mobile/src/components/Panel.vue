@@ -2,7 +2,7 @@
   <Page>
     <ActionBar title="Publiservicios">
         <NavigationButton text="Atrás" />
-    </ActionBar>        
+    </ActionBar>
     <StackLayout orientation="vertical">
       <Image src="~/images/stove.jpg"/>
        <ListView separatorColor="transparent" borderWidth="1" borderColor="#000" class="list" for="item in items" @itemTap="onItemTap"  >
@@ -13,30 +13,28 @@
           </StackLayout>
         </v-template>
       </ListView> 
-     
     </StackLayout>
   </Page>
 </template>
 <script>
-  import {mapState} from 'vuex'
   export default {
     created () {
-      console.log(this.$store)
-      console.log(this.userData)
+      if(this.$store.state.session) {
+        const problem = {icon: String.fromCharCode('0xea08'), text: 'Reportar un problema', route: '/mails'} 
+        this.items.push(problem)
+      }
     },
-    computed: mapState(['userData']),
     data(){
       return{
         items :[
           {icon: String.fromCharCode('0xe903'), text: 'Beneficios del gas natural', route: '/beneficios'},
           {icon: String.fromCharCode('0xe991'), text: 'Procesos y costos de instalación', route: '/instalacion'},
-          {icon: String.fromCharCode('0xea08'), text: 'Reportar un problema', route: '/home'}
         ]
       }
     },
     methods: {
       onItemTap(e) {
-        this.$router.push('/panel'+e.item.route)
+          this.$router.push('/panel'+e.item.route)
       }
     }
   }

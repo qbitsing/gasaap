@@ -19,7 +19,8 @@
 <script>
     export default {
         created() {
-            console.log(this.$store)
+            this.$store.commit('SET_USER', null)
+            console.log(this.$store.state.session)
         }
     }
 </script>
